@@ -39,8 +39,8 @@ This is a small synthetic classroom dataset. The output is suitable for demonstr
 
 ## Author
 
-Alvin Panio
+Alvin Christian S. Panio
 
 ## Course and section
 
-CS0065 - AN43
+CS0065 - AN43-BSCSSE

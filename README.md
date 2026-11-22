@@ -1,6 +1,6 @@
 # CS0065 Intelligent Systems — Coursework Repository
 
-This repository contains Alvin Christian S. Panio's coursework for **CS0065 — Intelligent Systems**, section **AN43-BSCSSE**. It includes four technical assessments with Python programs and PDF reports, plus a KNIME student early warning classification activity.
+This repository contains Alvin Christian S. Panio's coursework for **CS0065 — Intelligent Systems**, section **AN43-BSCSSE**. It includes five technical assessments with Python programs and PDF reports, plus a KNIME student early warning classification activity.
 
 ## Repository Contents
 
@@ -10,6 +10,7 @@ This repository contains Alvin Christian S. Panio's coursework for **CS0065 — 
 | [TA2](TA2/) | Rule-Based Vacuum Cleaner Agent | A two-room simulation that applies condition-action rules: clean a dirty room or move to the other room when the current room is clean. |
 | [TA3](TA3/) | Case-Based Reasoning Intelligent Tutoring System | A math tutor retrieves similar cases, adapts practice and support, requires review, and saves successful experiences to a JSON case base. Pair work by Alvin Christian S. Panio and Faith Nemeño. |
 | [TA4](TA4/) | Weather Knowledge and Reasoning | Illustrative weather facts demonstrate rule-based reasoning and the retrieve–reuse–revise–retain cycle of case-based reasoning, with optional JSON persistence. |
+| [TA5](TA5/) | Laboratory Activity 2: Sentiment Analysis | A TextBlob program classifies ten sentences and summarizes the results. The challenge classifies one sentence by counting matches in positive and negative word lists. |
 | [DemoEarlyWarningTool](DemoEarlyWarningTool/) | Asynchronous Activity 1: Student Early Warning Tool Using KNIME | A workflow compares Decision Tree, Logistic Regression, and Random Forest models to classify students as `At Risk` or `Not At Risk`. |
 
 ### TA1 — Random Walk Simulation
@@ -33,6 +34,12 @@ This repository contains Alvin Christian S. Panio's coursework for **CS0065 — 
 - [ta4_weather_reasoning.py](TA4/ta4_weather_reasoning.py) — weather reasoning demonstration using temperature, humidity, rain, outdoor activity, and umbrella availability. Supports rule-based and case-based modes, manual revision, and optional saved cases.
 - [TA4_Panio.pdf](TA4/TA4_Panio.pdf) — assessment report.
 
+### TA5 — Sentiment Analysis
+
+- [sentiment_analysis.py](TA5/sentiment_analysis.py) — classifies ten sentences with TextBlob and reports positive, neutral, and negative totals.
+- [challenge.py](TA5/challenge.py) — counts matches in the Hu–Liu word lists and classifies the sentence from the two totals. See the [word-list sources](TA5/data/SOURCES.md).
+- [Panio_Laboratory Activity 2.pdf](TA5/Panio_Laboratory%20Activity%202.pdf) — completed worksheet, source code, sample output, and VS Code screenshots.
+
 ### Asynchronous Activity 1 — KNIME Student Early Warning Tool
 
 - [DemoEarlyWarningTool.knwf](DemoEarlyWarningTool/DemoEarlyWarningTool.knwf) — exported KNIME workflow, including the dataset in its workflow data area.
@@ -55,7 +62,7 @@ Use **Python 3.10 or later** as a common starting point for the assessments. TA2
 python -m pip install agentpy matplotlib pillow
 ```
 
-Run the following commands from the repository root. Run each assessment separately; TA1 and TA2 prompt for input.
+Run the following commands from the repository root. Run each assessment separately. TA1, TA2, and both TA5 programs prompt for input.
 
 ### TA1
 
@@ -104,6 +111,18 @@ python TA4/ta4_weather_reasoning.py --mode cbr --interactive --case-file TA4/lea
 ```
 
 Without `--case-file`, learned cases remain in memory for the current run only. The JSON file is generated when saving is enabled.
+
+### TA5
+
+Install TextBlob, then run either program from the repository root. The challenge uses Python’s standard library and the word lists in `TA5/data/`.
+
+```powershell
+python -m pip install -r TA5/requirements.txt
+python TA5/sentiment_analysis.py
+python TA5/challenge.py
+```
+
+Enter ten sentences for the TextBlob program or one sentence for the challenge.
 
 ## Running the KNIME Workflow
 
